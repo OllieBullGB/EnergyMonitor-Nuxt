@@ -28,6 +28,9 @@ npm install
 pnpm install
 ```
 
+### OpenWeatherMap Api Key
+EnergyMonitor utilises OpenWeatherMap for sourcing weather data for its solar calculations. To run the project you will need an API key which can be obtained [here](https://openweathermap.org/api)
+
 ## Development Server
 
 Start the development server on http://localhost:3000

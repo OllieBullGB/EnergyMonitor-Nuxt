@@ -15,6 +15,7 @@ export default defineEventHandler(async (event) =>
 
     event.context.query = sanitisedQueryParams;
 
+    // Every endpoint needs a latitude and longitude so we can check in the middleware instead of in every endpoint
     if (event.context.query.latitude === undefined || event.context.query.longitude === undefined)
     {
         return sendError(event, createError({statusCode: 400, statusMessage: 'Missing latitude or longitude'}))
