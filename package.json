@@ -1,0 +1,22 @@
+{
+  "name": "energy-monitor-nuxt",
+  "version": "1.0.0",
+  "lastUpdate": "02/21/2023",
+  "description": "Translation of the energy monitor API (A University of East Anglia Synoptic Project) into a Nuxt application.",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "nuxt": "^3.2.2"
+  },
+  "dependencies": {
+    "human-time": "^0.0.2",
+    "node-fetch": "^3.3.0",
+    "url-pattern": "^1.0.3"
+  }
+}
