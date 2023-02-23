@@ -12,8 +12,11 @@ by a team of Students at the University of East Anglia:
 #### The Original EnergyMonitor
 EnergyMonitor was originally built to assist remote communities in Cape York, Australia with the adoption of renewable energy. Providing users with a reasonably accurate prediction of their energy input (solar), storage (batteries) and expenditure.
 
-#### Why Rewrite it?
+##### Why Rewrite it?
 I am using EnergyMonitor as a relevant case study to work on whilst I learn about how developing web applications with Nuxt3
+
+### Contributing
+Whilst we were proud of this system (especially due to the short timescale in which we built it). The solar calculator portion of the project is in need of some improvements. If you wish to make changes to our model or suggest any improvements that can be made, please raise an issue and state whether you wish to contribute said improvements or just wish to give ideas.
 
 ## Setup
 
