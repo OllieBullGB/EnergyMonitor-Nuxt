@@ -1,6 +1,6 @@
 class IntensityCalculator 
 {
-    constructor(dateTimeStr, latitude, longitude, altitude)
+    constructor(dateTimeStr, latitude, longitude, altitude, sunrise, sunset)
     {
         let dt = dateTimeStr.split(", ");
         this.date = new Date(dateTimeStr);
@@ -10,6 +10,10 @@ class IntensityCalculator
         this.latitude = latitude; //deg
         this.longitude = longitude; //deg
         this.altitude = altitude; //meters above sea level
+        let sunriseTime = new Date(sunrise * 1000);
+        this.sunrise = sunriseTime.getHours() + (sunriseTime.getMinutes() / 60);
+        let sunsetTime = new Date(sunset * 1000);
+        this.sunset = sunsetTime.getHours() + (sunsetTime.getMinutes() / 60);
     }
 
     static degToRad(deg)
@@ -189,6 +193,12 @@ class IntensityCalculator
 
     getDirectIntensity()
     {
+        let dateTime = this.date.getHours() + (this.date.getMinutes() / 60);
+        if(dateTime < this.sunrise || dateTime > this.sunset)
+        {
+            return 0;
+        }
+
         let airmass = this.getAirMass();
         let temp = Math.pow(airmass, 0.678);
         let airmassMultiplier = Math.pow(0.7, temp);

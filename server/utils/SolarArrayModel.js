@@ -31,7 +31,10 @@ class SolarArrayModel
 
     getCloudCoverCoefficient()
     {
-        return (100 - this.cloudCover) / 100
+        // 0% cloud cover = 100% efficiency
+        // 100% cloud cover = ~40% efficiency
+        // Needs retuning with more accurate data
+        return (100 - (this.cloudCover * 0.6)) / 100;
     }
 
     getIncidentIntensity()

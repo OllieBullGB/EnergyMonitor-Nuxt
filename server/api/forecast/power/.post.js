@@ -17,16 +17,14 @@ export default defineEventHandler( async (event) =>
 {
     const { latitude, longitude } = event.context.query;
     const body = await readBody(event);
-    console.log(body);
 
     const { area, angle, direction } = body;
 
     if(area === undefined || angle === undefined || direction === undefined)
     {
-        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing area, angle or direction for solar array'}))
+        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing area, angle or direction for solar array'}));
     }
 
-    
     const weather = new OpenWeather(latitude, longitude, process.env.OPEN_WEATHER_API_KEY);
     const forecast = await weather.getForecast()
 
@@ -54,5 +52,4 @@ export default defineEventHandler( async (event) =>
     return {
         forecast
     }
-    
 });

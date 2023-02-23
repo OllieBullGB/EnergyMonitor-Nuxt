@@ -21,7 +21,7 @@ export default defineEventHandler( async (event) =>
     forecast.weather.forEach((weatherPoint, index) =>
     {
         let dateTime = new Date(weatherPoint.dateTime * 1000).toLocaleString("en-US");
-        let intensityCalculator = new IntensityCalculator(dateTime, forecast.location.latitude, forecast.location.longitude, weatherPoint.altitude);
+        let intensityCalculator = new IntensityCalculator(dateTime, forecast.location.latitude, forecast.location.longitude, weatherPoint.altitude, forecast.location.sunrise, forecast.location.sunset);
         
         forecast.weather[index].intensity = 
         {
