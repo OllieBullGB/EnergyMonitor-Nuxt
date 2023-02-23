@@ -8,8 +8,8 @@
 */
 
 import { sendError } from "h3";
-import OpenWeather from "../../../utils/OpenWeather";
-import IntensityCalculator from "../../../utils/IntensityCalculator";
+import OpenWeather from "~~/server/utils/OpenWeather"
+import IntensityCalculator from "~~/server/utils/IntensityCalculator"
 
 export default defineEventHandler( async (event) =>
 {
