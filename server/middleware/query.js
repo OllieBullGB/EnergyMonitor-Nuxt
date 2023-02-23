@@ -1,7 +1,33 @@
+import UrlPattern from 'url-pattern'
+
 export default defineEventHandler(async (event) => 
 {
+
+    const endpoints =
+    [
+        '/api/forecast/*',
+    ]
+
+    const isHandledByThisMiddleware = endpoints.some(endpoint => 
+    {
+        const pattern = new UrlPattern(endpoint)
+
+        return pattern.match(event.req.url)
+    })
+
+    if (!isHandledByThisMiddleware) 
+    {
+        return
+    }
+
     const url = event.node.req.url;
-    const query = url.split('?')[1];
+    const urlSplit = url.split('?');
+    const query = urlSplit[1];
+    if(query === undefined)
+    {
+        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing latitude or longitude'}))
+    }
+
     const queryParams = query.split('&');
 
     const sanitisedQueryParams = {};
@@ -15,7 +41,7 @@ export default defineEventHandler(async (event) =>
 
     event.context.query = sanitisedQueryParams;
 
-    // Every endpoint needs a latitude and longitude so we can check in the middleware instead of in every endpoint
+    //Every forecast endpoint requires a latitude and longitude
     if (event.context.query.latitude === undefined || event.context.query.longitude === undefined)
     {
         return sendError(event, createError({statusCode: 400, statusMessage: 'Missing latitude or longitude'}))
