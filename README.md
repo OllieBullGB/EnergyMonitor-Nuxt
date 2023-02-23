@@ -1,6 +1,6 @@
 # EnergyMonitor in Nuxt
 
-![EnergyMonitor Logo in Green](https://raw.githubusercontent.com/OllieBullGB/EnergyMonitor/main/public/img/logo.jpg?token=GHSAT0AAAAAAB5GBTN5PV72T6MXQ4JUWPQSY7XJMCA)
+![EnergyMonitor Logo in Green](https://i.imgur.com/986sdgN.jpg)
 
 EnergyMonitor was originally an Express-based web app built
 by a team of Students at the University of East Anglia:
