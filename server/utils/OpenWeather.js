@@ -1,4 +1,4 @@
-import WeatherAtTime from './weatherAtTime';
+import WeatherAtTime from '~~/server/utils/WeatherAtTime'
 import fetch from 'node-fetch';
 
 class OpenWeather 

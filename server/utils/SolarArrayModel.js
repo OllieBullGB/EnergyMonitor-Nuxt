@@ -1,4 +1,4 @@
-import IntensityCalculator from "./IntensityCalculator";
+import IntensityCalculator from '~~/server/utils/IntensityCalculator';
 
 class SolarArrayModel
 {
