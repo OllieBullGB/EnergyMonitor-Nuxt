@@ -1,5 +1,7 @@
 # EnergyMonitor in Nuxt
 
+![EnergyMonitor Logo in Green](https://raw.githubusercontent.com/OllieBullGB/EnergyMonitor/main/public/img/logo.jpg?token=GHSAT0AAAAAAB5GBTN5PV72T6MXQ4JUWPQSY7XJMCA)
+
 EnergyMonitor was originally an Express-based web app built
 by a team of Students at the University of East Anglia:
 - Ollie Bull
@@ -8,10 +10,10 @@ by a team of Students at the University of East Anglia:
 - Ellie Hannigan
 
 #### The Original EnergyMonitor
-EnergyMonitor was originally built to assist remote communities in Cape York with the adoption of renewable energy. Providing users with a reasonably accurate prediction of their energy input (solar), expenditure and storage (batteries).
+EnergyMonitor was originally built to assist remote communities in Cape York, Australia with the adoption of renewable energy. Providing users with a reasonably accurate prediction of their energy input (solar), storage (batteries) and expenditure.
 
 #### Why Rewrite it?
-I am using EnergyMonitor as a relevant case study to work on whilst I learn about how to develop web applications with Nuxt3
+I am using EnergyMonitor as a relevant case study to work on whilst I learn about how developing web applications with Nuxt3
 
 ## Setup
 
@@ -28,7 +30,7 @@ npm install
 pnpm install
 ```
 
-### OpenWeatherMap Api Key
+### OpenWeatherMap API Key
 EnergyMonitor utilises OpenWeatherMap for sourcing weather data for its solar calculations. To run the project you will need an API key which can be obtained [here](https://openweathermap.org/api)
 
 ## Development Server
