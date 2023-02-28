@@ -10,7 +10,7 @@ by a team of Students at the University of East Anglia:
 - Ellie Hannigan
 
 #### The Original EnergyMonitor
-EnergyMonitor was originally built to assist remote communities in Cape York, Australia with the adoption of renewable energy. Providing users with a reasonably accurate prediction of their energy input (solar), storage (batteries) and expenditure.
+EnergyMonitor was originally built to assist remote communities in Cape York, Australia with the adoption of renewable energy. Providing users with a reasonably accurate prediction of their energy input (solar), storage (batteries) and expenditure. You can find the original EnergyMonitor [here](https://github.com/OllieBullGB/EnergyMonitor-SPY1)
 
 ##### Why Rewrite it?
 I am using EnergyMonitor as a relevant case study to work on whilst I learn about how developing web applications with Nuxt3
