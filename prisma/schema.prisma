@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+    previewFeatures = ["filteredRelationCount"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id        Int      @id @default(autoincrement())
+    name      String
+    apiKey    String   @unique
+    profiles  Profile[]
+}
+
+model Profile {
+    id        Int      @id @default(autoincrement())
+    name      String
+    area      Float    @default(0)
+    angle     Float    @default(0)
+    direction Float    @default(0)
+
+    userId    Int
+    user      User     @relation(fields: [userId], references: [id])
+}

@@ -6,7 +6,8 @@ export default defineEventHandler(async (event) =>
 
     const endpoints =
     [
-        '/api/forecast/*',
+        '/api/store/*',
+        '/api/forecast/*'
     ]
 
     const isHandledByThisMiddleware = endpoints.some(endpoint => 
@@ -26,7 +27,7 @@ export default defineEventHandler(async (event) =>
     const query = urlSplit[1];
     if(query === undefined)
     {
-        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing latitude or longitude'}))
+        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing apiKey'}))
     }
 
     const queryParams = query.split('&');
@@ -42,9 +43,19 @@ export default defineEventHandler(async (event) =>
 
     event.context.query = sanitisedQueryParams;
 
-    //Every forecast endpoint requires latitude and longitude
-    if (event.context.query.latitude === undefined || event.context.query.longitude === undefined)
+    //Every auth endpoint requires an apikey
+    if (event.context.query.apiKey === undefined)
     {
-        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing latitude or longitude'}))
+        return sendError(event, createError({statusCode: 400, statusMessage: 'Missing apiKey,'}))
     }
+
+    //Check if the apikey is valid
+    const user = await getUserByApiKey(event.context.query.apiKey);
+    if(!user)
+    {
+        return sendError(event, createError({statusCode: 400, statusMessage: 'API Key is invalid'}))
+    }
+
+    //Add user profiles to the context
+    event.context.user = user;
 });

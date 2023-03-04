@@ -16,6 +16,7 @@ export default defineEventHandler( async (event) =>
 
     return {
         version,
-        lastUpdate
+        lastUpdate,
+        "helper": "To obtain an API key, please register at /auth/register with a name."
     }
 })
