@@ -9,12 +9,18 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest --run --reporter verbose --globals",
+    "test:watch": "vitest --reporter verbose --globals",
+    "test:coverage": "vitest --run --reporter verbose --coverage --globals"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",
+    "@vitest/coverage-c8": "^0.29.7",
     "nuxt": "^3.2.2",
-    "prisma": "^4.11.0"
+    "prisma": "^4.11.0",
+    "supertest": "^6.3.3",
+    "vitest": "^0.29.7"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",

@@ -1,4 +1,4 @@
-import WeatherAtTime from '~~/server/utils/WeatherAtTime'
+import WeatherAtTime from './WeatherAtTime'
 import fetch from 'node-fetch';
 
 class OpenWeather 
@@ -25,6 +25,7 @@ class OpenWeather
         const data = await response.json();
         
         this.weatherPoints = data.list.map(weather => new WeatherAtTime(weather));
+        
 
         this.location = 
         {
